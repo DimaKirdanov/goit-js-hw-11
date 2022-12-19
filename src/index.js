@@ -19,7 +19,6 @@ refs.loadmoreBtn.classList.add('is-hidden');
 refs.andMessage.classList.add('is-hidden');
 
 refs.searchForm.addEventListener('submit', onSearch);
-// refs.loadmoreBtn.addEventListener('click', onClickLoadMore);
 
 function onSearch(e) {
   e.preventDefault();
@@ -39,7 +38,6 @@ function onSearch(e) {
 
   imgApiServis.fetchImgs().then(answerProperties => {
     if (answerProperties.length === 0) {
-      // refs.loadmoreBtn.classList.add('is-hidden');
       refs.andMessage.classList.add('is-hidden');
       imgApiServis.infoMessNoImg();
       return;
@@ -48,7 +46,6 @@ function onSearch(e) {
     if (answerProperties.length < 40) {
       imgApiServis.successMess();
       refs.andMessage.classList.remove('is-hidden');
-      // refs.loadmoreBtn.classList.add('is-hidden');
 
       renderMarkupList(refs.gallery, answerProperties, markupCreating);
       gallery.refresh();
@@ -59,7 +56,6 @@ function onSearch(e) {
 
     imgApiServis.successMess();
     refs.andMessage.classList.add('is-hidden');
-    // refs.loadmoreBtn.classList.remove('is-hidden');
     renderMarkupList(refs.gallery, answerProperties, markupCreating);
     gallery.refresh();
     imgApiServis.incrementPage();
@@ -67,7 +63,7 @@ function onSearch(e) {
   });
 }
 
-// Запрос IntersectionObserver()
+
 function onEntry(entries) {
   entries.forEach(entry => {
     const pageCount = Math.ceil(imgApiServis.totalHits / imgApiServis.perPage);
@@ -91,19 +87,6 @@ const observer = new IntersectionObserver(onEntry, {
   rootMargin: '100px',
 });
 
-// Запрос по кнопке
-// function onClickLoadMore() {
-//     imgApiServis.fetchImgs()
-//         .then(answerProperties => {
-//         if (answerProperties.length < 40) {
-//             refs.andMessage.classList.remove('is-hidden');
-//             refs.loadmoreBtn.classList.add('is-hidden');
-//             renderRefreshScrol(refs.gallery, answerProperties, markupCreating);
-//             return;
-//         };
-//         renderRefreshScrol(refs.gallery, answerProperties, markupCreating);
-//     })
-// };
 
 function renderRefreshScrol(el, answer, func) {
   renderMarkupList(el, answer, func);

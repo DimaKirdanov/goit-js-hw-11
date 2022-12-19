@@ -9,7 +9,7 @@ export default class NewService {
     this.searchQuery = searchQuery;
     try {
       const response = await fetch(
-        `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=40&key=22945587-13dcce98a35cac559e6949163`
+        `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=40&key=31977117-a9df314137c0f222799b85ecf`
       );
       newData = await response.json();
       this.incrementPage();

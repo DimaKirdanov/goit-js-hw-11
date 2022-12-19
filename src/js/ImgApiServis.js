@@ -27,8 +27,10 @@ export default class ImgApiServis {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
+      q: 'yellow+flower',
       per_page: `${this.perPage}`,
       page: `${this.page}`,
+      pretty: 'true',
     });
 
     try {

@@ -6,7 +6,7 @@ export function markupCreating({ webformatURL, largeImageURL, tags, likes, views
     return `
     
         <div class="photo-card">
-        <a class="big-photo" href="${largeImageURL}">
+        <a class="photo-card-large" href="${largeImageURL}">
          <div class="img-wrapper">
             <img class="img" src="${webformatURL}" alt="${tags}" width="380" loading="lazy" />
         </div>    
